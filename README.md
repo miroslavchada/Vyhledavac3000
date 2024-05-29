@@ -26,7 +26,7 @@ Vypíší se všechny řádky, u kterých se **alespoň v jednom sloupci** našl
 
 Aplikace je vytvořena na platformě **Windows Forms C#** verze **.NET 8.0**. Je proto zapotřebí mít stažené .NET 8 SDK a ve Visual Studiu stažený balíček *Vývoj desktopových aplikací pomocí .NET*. Projekt se otevírá souborem *Vyhledavac3000.sln*.
 
-## Změnil se počet řádků v tabulce
+## Změnil se počet sloupců v tabulce
 
 1. V návrháři formuláře *FormList.cs* upravte ovládacímu prvku `DataGridView` sloupce podle situace.
     - Nakliknutím na prvek se u něj vpravo nahoře zobrazí šipka doprava
