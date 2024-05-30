@@ -9,6 +9,13 @@ A simple program for searching the current list of cadastral areas for GEPRO's s
 - Dokáže soubor vypsat do interaktivní tabulky (pouze pro čtení)
 - Pomocí vyhledávacího okna a podrobnějích voleb zobrazí požadované informace
 
+# Instalace
+
+Archiv obsahuje samostatnou aplikaci.
+Složku extrahujte to vlastní složky která nepotřebuje admin. práva a na Vyhledavac3000.exe si vytvořte zástupce. Na zástupce si můžete přes vlastnosti nastavit ikonu Vyhledavac3000.ico, která se nachází v složce s .EXE souborem.
+
+Omlouvám se za složitější instalaci. Snažím se přijít na lepší způsob, no takto dokáže aplikace běžet samostatně bez .NET Runtime a nepotřebuje licenční klíč, což jsou zatím mé 2 hlavní kameny úrazu.
+
 # Práce s programem
 
 V úvodním okně je na výběr ze dvou možností. Pro nahrání ze SVN je potřeba mít **přístup na lokální server GEPRO** (být v síti, nebo použití VPN). Pokud se vybírá soubor manuálně, je potřeba, aby byl ve **správném formátu** - stejném, jako na SVN serveru.
