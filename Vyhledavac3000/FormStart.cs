@@ -9,20 +9,21 @@ namespace Vyhledavac3000 {
             InitializeComponent();
 
             // Nastaví cestu k souboru
-            fileWithPath = @$"{Path.GetDirectoryName(Application.ExecutablePath)}\Identcis.csv".Replace('\\', '/');
+            filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), appName, fileName);
             // Povolí spuštní, pokud soubor již existuje
-            EnableStartIfFileExists(fileWithPath);
+            EnableStartIfFileExists(filePath);
         }
 
-        private readonly string fileNameWithExt = "Identcis.csv";
-        private string fileWithPath = "";
+        private readonly string appName = "Vyhledavac3000";
+        private readonly string fileName = "Identcis.csv";
+        private string filePath = "";
 
         private void BtSvnLoad_Click(object sender, EventArgs e) {
             string svnUrl = "svn://subversion.gepro/kokes/Kokes.700/TABLES.EXP";
-            string? outputDir = fileWithPath;
+            string? outputDir = filePath;
 
             // Stáhne soubor ze SVN a vrátí kód výsledku
-            int svnDownloadEndCode = DownloadSvnFile(svnUrl, fileNameWithExt, outputDir);
+            int svnDownloadEndCode = DownloadSvnFile(svnUrl, fileName, outputDir);
             string svnDownloadInfo = "";
             switch (svnDownloadEndCode) {
                 case 0:
@@ -37,14 +38,14 @@ namespace Vyhledavac3000 {
             }
 
             // Pokud soubor neexistuje, nepodaøilo se ho stáhnout ze SVN a proces se pøeruší
-            if (File.Exists(fileWithPath)) {
+            if (File.Exists(filePath)) {
                 LbFileName.Text = "Identcis.csv se nepodaøilo naèíst ze SVN";
                 return;
             }
 
             // Pøevede soubor na UTF-8 a zkontroluje, zda existuje
             ConvertFileToUtf8();
-            EnableStartIfFileExists(fileWithPath);
+            EnableStartIfFileExists(filePath);
             LbFileName.Text = svnDownloadInfo;
         }
 
@@ -54,7 +55,7 @@ namespace Vyhledavac3000 {
 
             // Kopíruje vybraný soubor do cílové složky
             FileInfo Sourcefile = new FileInfo(OpenFileDialogCsv.FileName);
-            Sourcefile.CopyTo(@$"{Application.ExecutablePath}\..\{fileNameWithExt}", true);
+            Sourcefile.CopyTo(filePath, true);
             LbFileName.Text = $"Zvolen soubor {OpenFileDialogCsv.SafeFileName}";
 
             // Pøevede soubor na UTF-8 a zkontroluje, zda existuje
@@ -107,23 +108,23 @@ namespace Vyhledavac3000 {
         }
 
         private void ConvertFileToUtf8() {
-            DateTime lastWriteTime = File.GetLastWriteTimeUtc(fileWithPath);
+            DateTime lastWriteTime = File.GetLastWriteTimeUtc(filePath);
             string srcEncoding = "Windows-1250";
             string dstEncoding = "UTF-8";
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             // Pøeète veškerý text ze vstupního souboru
-            string[] content = File.ReadAllLines(fileWithPath, Encoding.GetEncoding(srcEncoding));
+            string[] content = File.ReadAllLines(filePath, Encoding.GetEncoding(srcEncoding));
 
             // Zapíše obsah do výstupního souboru pomocí FileStream a kódování UTF-8 bez BOM
-            using (StreamWriter sw = new(new FileStream(fileWithPath, FileMode.Create), new UTF8Encoding(false))) {
+            using (StreamWriter sw = new(new FileStream(filePath, FileMode.Create), new UTF8Encoding(false))) {
                 foreach (var line in content) {
                     sw.WriteLine(line);
                 }
             }
             // Sets new files last write time to same as the original file
-            File.SetLastWriteTimeUtc(fileWithPath, lastWriteTime);
+            File.SetLastWriteTimeUtc(filePath, lastWriteTime);
         }
 
         private void BtStart_Click(object sender, EventArgs e) {
