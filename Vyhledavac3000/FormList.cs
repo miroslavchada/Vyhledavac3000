@@ -126,13 +126,13 @@ namespace Vyhledavac3000 {
             foreach (var line in identcisDataList) {
                 if (RbIs.Checked) {
                     foreach(int columnIndex in columnsToSearch[(int)currentSearchBy])
-                        if (((ITuple)line)[columnIndex].ToString() == filter) {
+                        if (((ITuple)line)[columnIndex].ToString().ToLower() == filter.ToLower()) {
                             filteredDataList.Add(line);
                             break;
                         }
                 } else {
                     foreach (int columnIndex in columnsToSearch[(int)currentSearchBy])
-                        if (((ITuple)line)[columnIndex].ToString().Contains(filter)) {
+                        if (((ITuple)line)[columnIndex].ToString().ToLower().Contains(filter.ToLower())) {
                             filteredDataList.Add(line);
                             break;
                         }

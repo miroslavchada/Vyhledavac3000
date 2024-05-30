@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Product>Vyhledávač 3000</Product>
+    <Company>Miroslav Chada</Company>
+    <Authors>Miroslav Chada</Authors>
+    <PackAsTool>True</PackAsTool>
   </PropertyGroup>
 
   <ItemGroup>

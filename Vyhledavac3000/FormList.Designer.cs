@@ -25,6 +25,18 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormList));
             DataGridView = new DataGridView();
+            TableLPContainer = new TableLayoutPanel();
+            TableLPSearchContainer = new TableLayoutPanel();
+            TableLPSearch = new TableLayoutPanel();
+            LbSearch = new Label();
+            LbSearchBy = new Label();
+            CbSearchBy = new ComboBox();
+            SearchTextBox = new TextBox();
+            BtSearch = new Button();
+            FlowLPRadioContainsIs = new FlowLayoutPanel();
+            RbIs = new RadioButton();
+            RbContains = new RadioButton();
+            LbFileInfo = new Label();
             KRAJ_KOD = new DataGridViewTextBoxColumn();
             KRAJ_NAZEV = new DataGridViewTextBoxColumn();
             OKRES_KOD = new DataGridViewTextBoxColumn();
@@ -42,18 +54,6 @@
             PRARES_KOD = new DataGridViewTextBoxColumn();
             PRARES_NAZEV = new DataGridViewTextBoxColumn();
             POZNAMKA = new DataGridViewTextBoxColumn();
-            TableLPContainer = new TableLayoutPanel();
-            TableLPSearchContainer = new TableLayoutPanel();
-            TableLPSearch = new TableLayoutPanel();
-            LbSearch = new Label();
-            LbSearchBy = new Label();
-            CbSearchBy = new ComboBox();
-            SearchTextBox = new TextBox();
-            BtSearch = new Button();
-            FlowLPRadioContainsIs = new FlowLayoutPanel();
-            RbIs = new RadioButton();
-            RbContains = new RadioButton();
-            LbFileInfo = new Label();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             TableLPContainer.SuspendLayout();
             TableLPSearchContainer.SuspendLayout();
@@ -75,125 +75,6 @@
             DataGridView.ReadOnly = true;
             DataGridView.Size = new Size(1392, 662);
             DataGridView.TabIndex = 0;
-            // 
-            // KRAJ_KOD
-            // 
-            KRAJ_KOD.HeaderText = "Kód kraje";
-            KRAJ_KOD.Name = "KRAJ_KOD";
-            KRAJ_KOD.ReadOnly = true;
-            KRAJ_KOD.Width = 75;
-            // 
-            // KRAJ_NAZEV
-            // 
-            KRAJ_NAZEV.HeaderText = "Název kraje";
-            KRAJ_NAZEV.Name = "KRAJ_NAZEV";
-            KRAJ_NAZEV.ReadOnly = true;
-            KRAJ_NAZEV.Width = 160;
-            // 
-            // OKRES_KOD
-            // 
-            OKRES_KOD.HeaderText = "Kód okresu";
-            OKRES_KOD.Name = "OKRES_KOD";
-            OKRES_KOD.ReadOnly = true;
-            OKRES_KOD.Width = 75;
-            // 
-            // NUTS4
-            // 
-            NUTS4.HeaderText = "Kód okresu NUTS4";
-            NUTS4.Name = "NUTS4";
-            NUTS4.ReadOnly = true;
-            NUTS4.Width = 75;
-            // 
-            // OKRES_NAZEV
-            // 
-            OKRES_NAZEV.HeaderText = "Název okresu";
-            OKRES_NAZEV.Name = "OKRES_NAZEV";
-            OKRES_NAZEV.ReadOnly = true;
-            OKRES_NAZEV.Width = 90;
-            // 
-            // OBEC_KOD
-            // 
-            OBEC_KOD.HeaderText = "Kód obce";
-            OBEC_KOD.Name = "OBEC_KOD";
-            OBEC_KOD.ReadOnly = true;
-            OBEC_KOD.Width = 75;
-            // 
-            // OBEC_NAZEV
-            // 
-            OBEC_NAZEV.HeaderText = "Název obce";
-            OBEC_NAZEV.Name = "OBEC_NAZEV";
-            OBEC_NAZEV.ReadOnly = true;
-            OBEC_NAZEV.Width = 140;
-            // 
-            // KU_KOD
-            // 
-            KU_KOD.HeaderText = "Kód katas. území";
-            KU_KOD.Name = "KU_KOD";
-            KU_KOD.ReadOnly = true;
-            KU_KOD.Width = 75;
-            // 
-            // KU_PRAC
-            // 
-            KU_PRAC.HeaderText = "Prac. číslo katas. území";
-            KU_PRAC.Name = "KU_PRAC";
-            KU_PRAC.ReadOnly = true;
-            KU_PRAC.Width = 90;
-            // 
-            // KU_NAZEV
-            // 
-            KU_NAZEV.HeaderText = "Název katas. území";
-            KU_NAZEV.Name = "KU_NAZEV";
-            KU_NAZEV.ReadOnly = true;
-            KU_NAZEV.Width = 140;
-            // 
-            // MAPA
-            // 
-            MAPA.HeaderText = "Mapa";
-            MAPA.Name = "MAPA";
-            MAPA.ReadOnly = true;
-            MAPA.Width = 55;
-            // 
-            // CISELNA_RADA
-            // 
-            CISELNA_RADA.HeaderText = "Číselná řada";
-            CISELNA_RADA.Name = "CISELNA_RADA";
-            CISELNA_RADA.ReadOnly = true;
-            CISELNA_RADA.Width = 65;
-            // 
-            // PLATNOST_OD
-            // 
-            PLATNOST_OD.HeaderText = "Datum vzniku katas. území";
-            PLATNOST_OD.Name = "PLATNOST_OD";
-            PLATNOST_OD.ReadOnly = true;
-            PLATNOST_OD.Width = 95;
-            // 
-            // PLATNOST_DO
-            // 
-            PLATNOST_DO.HeaderText = "Datum zániku katas. území";
-            PLATNOST_DO.Name = "PLATNOST_DO";
-            PLATNOST_DO.ReadOnly = true;
-            PLATNOST_DO.Width = 95;
-            // 
-            // PRARES_KOD
-            // 
-            PRARES_KOD.HeaderText = "Kód prac. resortu";
-            PRARES_KOD.Name = "PRARES_KOD";
-            PRARES_KOD.ReadOnly = true;
-            PRARES_KOD.Width = 55;
-            // 
-            // PRARES_NAZEV
-            // 
-            PRARES_NAZEV.HeaderText = "Název prac. resortu ČUZK";
-            PRARES_NAZEV.Name = "PRARES_NAZEV";
-            PRARES_NAZEV.ReadOnly = true;
-            PRARES_NAZEV.Width = 160;
-            // 
-            // POZNAMKA
-            // 
-            POZNAMKA.HeaderText = "Poznámka";
-            POZNAMKA.Name = "POZNAMKA";
-            POZNAMKA.ReadOnly = true;
-            POZNAMKA.Width = 140;
             // 
             // TableLPContainer
             // 
@@ -348,6 +229,125 @@
             LbFileInfo.Size = new Size(113, 15);
             LbFileInfo.TabIndex = 1;
             LbFileInfo.Text = "Informace o hledání";
+            // 
+            // KRAJ_KOD
+            // 
+            KRAJ_KOD.HeaderText = "Kód kraje";
+            KRAJ_KOD.Name = "KRAJ_KOD";
+            KRAJ_KOD.ReadOnly = true;
+            KRAJ_KOD.Width = 75;
+            // 
+            // KRAJ_NAZEV
+            // 
+            KRAJ_NAZEV.HeaderText = "Název kraje";
+            KRAJ_NAZEV.Name = "KRAJ_NAZEV";
+            KRAJ_NAZEV.ReadOnly = true;
+            KRAJ_NAZEV.Width = 160;
+            // 
+            // OKRES_KOD
+            // 
+            OKRES_KOD.HeaderText = "Kód okresu";
+            OKRES_KOD.Name = "OKRES_KOD";
+            OKRES_KOD.ReadOnly = true;
+            OKRES_KOD.Width = 75;
+            // 
+            // NUTS4
+            // 
+            NUTS4.HeaderText = "Kód okresu NUTS4";
+            NUTS4.Name = "NUTS4";
+            NUTS4.ReadOnly = true;
+            NUTS4.Width = 75;
+            // 
+            // OKRES_NAZEV
+            // 
+            OKRES_NAZEV.HeaderText = "Název okresu";
+            OKRES_NAZEV.Name = "OKRES_NAZEV";
+            OKRES_NAZEV.ReadOnly = true;
+            OKRES_NAZEV.Width = 90;
+            // 
+            // OBEC_KOD
+            // 
+            OBEC_KOD.HeaderText = "Kód obce (ZUI)";
+            OBEC_KOD.Name = "OBEC_KOD";
+            OBEC_KOD.ReadOnly = true;
+            OBEC_KOD.Width = 75;
+            // 
+            // OBEC_NAZEV
+            // 
+            OBEC_NAZEV.HeaderText = "Název obce";
+            OBEC_NAZEV.Name = "OBEC_NAZEV";
+            OBEC_NAZEV.ReadOnly = true;
+            OBEC_NAZEV.Width = 140;
+            // 
+            // KU_KOD
+            // 
+            KU_KOD.HeaderText = "Kód katas. území";
+            KU_KOD.Name = "KU_KOD";
+            KU_KOD.ReadOnly = true;
+            KU_KOD.Width = 75;
+            // 
+            // KU_PRAC
+            // 
+            KU_PRAC.HeaderText = "Prac. číslo katas. území";
+            KU_PRAC.Name = "KU_PRAC";
+            KU_PRAC.ReadOnly = true;
+            KU_PRAC.Width = 90;
+            // 
+            // KU_NAZEV
+            // 
+            KU_NAZEV.HeaderText = "Název katas. území";
+            KU_NAZEV.Name = "KU_NAZEV";
+            KU_NAZEV.ReadOnly = true;
+            KU_NAZEV.Width = 140;
+            // 
+            // MAPA
+            // 
+            MAPA.HeaderText = "Mapa";
+            MAPA.Name = "MAPA";
+            MAPA.ReadOnly = true;
+            MAPA.Width = 55;
+            // 
+            // CISELNA_RADA
+            // 
+            CISELNA_RADA.HeaderText = "Číselná řada";
+            CISELNA_RADA.Name = "CISELNA_RADA";
+            CISELNA_RADA.ReadOnly = true;
+            CISELNA_RADA.Width = 65;
+            // 
+            // PLATNOST_OD
+            // 
+            PLATNOST_OD.HeaderText = "Datum vzniku katas. území";
+            PLATNOST_OD.Name = "PLATNOST_OD";
+            PLATNOST_OD.ReadOnly = true;
+            PLATNOST_OD.Width = 95;
+            // 
+            // PLATNOST_DO
+            // 
+            PLATNOST_DO.HeaderText = "Datum zániku katas. území";
+            PLATNOST_DO.Name = "PLATNOST_DO";
+            PLATNOST_DO.ReadOnly = true;
+            PLATNOST_DO.Width = 95;
+            // 
+            // PRARES_KOD
+            // 
+            PRARES_KOD.HeaderText = "Kód prac. resortu";
+            PRARES_KOD.Name = "PRARES_KOD";
+            PRARES_KOD.ReadOnly = true;
+            PRARES_KOD.Width = 55;
+            // 
+            // PRARES_NAZEV
+            // 
+            PRARES_NAZEV.HeaderText = "Název prac. resortu ČUZK";
+            PRARES_NAZEV.Name = "PRARES_NAZEV";
+            PRARES_NAZEV.ReadOnly = true;
+            PRARES_NAZEV.Width = 160;
+            // 
+            // POZNAMKA
+            // 
+            POZNAMKA.HeaderText = "Poznámka";
+            POZNAMKA.Name = "POZNAMKA";
+            POZNAMKA.ReadOnly = true;
+            POZNAMKA.Width = 140;
             // 
             // FormList
             // 

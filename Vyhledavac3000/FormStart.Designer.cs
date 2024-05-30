@@ -32,6 +32,7 @@
             BtSvnLoad = new Button();
             BtFileSelect = new Button();
             BtStart = new Button();
+            LbVersion = new Label();
             label1 = new Label();
             OpenFileDialogCsv = new OpenFileDialog();
             TableLP1.SuspendLayout();
@@ -76,14 +77,17 @@
             TableLPContainer.Controls.Add(LbFileName, 0, 1);
             TableLPContainer.Controls.Add(tableLayoutPanel1, 0, 0);
             TableLPContainer.Controls.Add(BtStart, 0, 2);
+            TableLPContainer.Controls.Add(LbVersion, 0, 3);
+            TableLPContainer.Dock = DockStyle.Fill;
             TableLPContainer.Location = new Point(0, 98);
             TableLPContainer.Margin = new Padding(0);
             TableLPContainer.Name = "TableLPContainer";
-            TableLPContainer.RowCount = 3;
+            TableLPContainer.RowCount = 4;
             TableLPContainer.RowStyles.Add(new RowStyle());
             TableLPContainer.RowStyles.Add(new RowStyle());
             TableLPContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TableLPContainer.Size = new Size(455, 245);
+            TableLPContainer.RowStyles.Add(new RowStyle());
+            TableLPContainer.Size = new Size(455, 250);
             TableLPContainer.TabIndex = 1;
             // 
             // LbFileName
@@ -149,6 +153,18 @@
             BtStart.UseVisualStyleBackColor = true;
             BtStart.Click += BtStart_Click;
             // 
+            // LbVersion
+            // 
+            LbVersion.Anchor = AnchorStyles.None;
+            LbVersion.AutoSize = true;
+            LbVersion.ForeColor = SystemColors.GrayText;
+            LbVersion.Location = new Point(166, 232);
+            LbVersion.Margin = new Padding(3, 0, 3, 3);
+            LbVersion.Name = "LbVersion";
+            LbVersion.Size = new Size(122, 15);
+            LbVersion.TabIndex = 4;
+            LbVersion.Text = "Aktuální verze - v1.0.0";
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
@@ -201,5 +217,6 @@
         private Button BtSvnLoad;
         private Button BtStart;
         private Label label1;
+        private Label LbVersion;
     }
 }
