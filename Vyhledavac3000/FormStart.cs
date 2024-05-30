@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using Ude;
@@ -22,6 +23,8 @@ namespace Vyhledavac3000 {
             string svnUrl = "svn://subversion.gepro/kokes/Kokes.700/TABLES.EXP";
             string? outputDir = filePath;
 
+            // Vytvoøí složku v AppData, pokud neexistuje
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             // Stáhne soubor ze SVN a vrátí kód výsledku
             int svnDownloadEndCode = DownloadSvnFile(svnUrl, fileName, outputDir);
             string svnDownloadInfo = "";
@@ -55,6 +58,8 @@ namespace Vyhledavac3000 {
 
             // Kopíruje vybraný soubor do cílové složky
             FileInfo Sourcefile = new FileInfo(OpenFileDialogCsv.FileName);
+            // Vytvoøí složku v AppData, pokud neexistuje
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             Sourcefile.CopyTo(filePath, true);
             LbFileName.Text = $"Zvolen soubor {OpenFileDialogCsv.SafeFileName}";
 

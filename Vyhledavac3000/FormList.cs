@@ -12,9 +12,10 @@ namespace Vyhledavac3000 {
             StartingProcedure(); // Spustí počáteční proceduru při inicializaci formuláře
         }
 
-        private readonly string dataPath = @$"{Application.ExecutablePath}\..\Identcis.csv"; // Cesta k datovému souboru
+        private readonly string dataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Vyhledavac3000", "Identcis.csv"); // Cesta k datovému souboru
         private List<(string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string)> identcisDataList = new(); // Seznam pro uchování dat z CSV souboru
-
+        
+        private string filePath = "";
         private enum SearchBy { // Enum pro určení typu vyhledávání
             USUAL,
             ALL
