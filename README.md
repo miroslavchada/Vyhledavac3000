@@ -9,7 +9,7 @@ A simple program for searching the current list of cadastral areas for GEPRO's s
 - Dokáže soubor vypsat do interaktivní tabulky (pouze pro čtení)
 - Pomocí vyhledávacího okna a podrobnějích voleb zobrazí požadované informace
 
-# Instalace programu
+# Instalace
 
 Archiv obsahuje samostatnou aplikaci.
 Složku extrahujte to vlastní složky která nepotřebuje admin. práva a na Vyhledavac3000.exe si vytvořte zástupce. Na zástupce si můžete přes vlastnosti nastavit ikonu Vyhledavac3000.ico, která se nachází v složce s .EXE souborem.
