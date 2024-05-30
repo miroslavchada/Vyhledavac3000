@@ -36,6 +36,12 @@ namespace Vyhledavac3000 {
                     break;
             }
 
+            // Pokud soubor neexistuje, nepodaøilo se ho stáhnout ze SVN a proces se pøeruší
+            if (File.Exists(fileWithPath)) {
+                LbFileName.Text = "Identcis.csv se nepodaøilo naèíst ze SVN";
+                return;
+            }
+
             // Pøevede soubor na UTF-8 a zkontroluje, zda existuje
             ConvertFileToUtf8();
             EnableStartIfFileExists(fileWithPath);

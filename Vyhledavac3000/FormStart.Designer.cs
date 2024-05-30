@@ -163,7 +163,7 @@
             LbVersion.Name = "LbVersion";
             LbVersion.Size = new Size(122, 15);
             LbVersion.TabIndex = 4;
-            LbVersion.Text = "Aktuální verze - v1.0.0";
+            LbVersion.Text = "Aktuální verze - v1.0.1";
             // 
             // label1
             // 
